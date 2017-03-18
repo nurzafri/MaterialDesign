@@ -18,11 +18,20 @@ import com.example.tutorial.materialdesign.Tab.SlidingTabLayout;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import java.io.IOException;
+
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
     private SlidingTabLayout slidingTabLayout;
     private ViewPager viewPager;
+    String Token;
+    boolean thread_running = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +39,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         FirebaseMessaging.getInstance().subscribeToTopic("test");
-        FirebaseInstanceId.getInstance().getToken();
+        String a = FirebaseInstanceId.getInstance().getToken();
+
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (thread_running){
+                    Token = FirebaseInstanceId.getInstance().getToken();
+                    if(Token != null){
+                        System.out.println("Device Token is " + Token);
+                        registerToken(Token);
+                    } else {
+                        System.out.println("Token is not loaded");
+                    }
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });t.start();
 
         System.out.println("MainActivity.onCreate:" + FirebaseInstanceId.getInstance().getToken());
 
@@ -61,6 +90,25 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
+    }
+
+    private void registerToken(String token) {
+
+        OkHttpClient client = new OkHttpClient();
+        RequestBody body = new FormBody.Builder()
+                .add("Token",token)
+                .build();
+
+        Request request = new Request.Builder()
+                .url("https://ukmandroidtutorial.000webhostapp.com/fcm/register.php")
+                .post(body)
+                .build();
+
+        try {
+            client.newCall(request).execute();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
