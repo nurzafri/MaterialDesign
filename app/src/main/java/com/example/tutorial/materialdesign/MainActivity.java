@@ -15,6 +15,8 @@ import android.view.MenuItem;
 
 import com.example.tutorial.materialdesign.Tab.MyAdapter;
 import com.example.tutorial.materialdesign.Tab.SlidingTabLayout;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +28,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseMessaging.getInstance().subscribeToTopic("test");
+        FirebaseInstanceId.getInstance().getToken();
+
+        System.out.println("MainActivity.onCreate:" + FirebaseInstanceId.getInstance().getToken());
+
         toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         //set logo beside title on toolbar
