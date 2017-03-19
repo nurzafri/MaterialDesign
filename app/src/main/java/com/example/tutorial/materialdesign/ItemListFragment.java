@@ -53,6 +53,7 @@ public class ItemListFragment extends android.support.v4.app.Fragment {
                 HashMap<String,String> map =(HashMap)parent.getItemAtPosition(position);
                 String empId = map.get(Config.TAG_ID).toString();
                 intent.putExtra(Config.EMP_ID,empId);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });

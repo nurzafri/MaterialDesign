@@ -129,7 +129,7 @@ public class ViewEmployee extends AppCompatActivity implements View.OnClickListe
                 super.onPostExecute(s);
                 loading.dismiss();
                 Toast.makeText(ViewEmployee.this,s,Toast.LENGTH_LONG).show();
-                startActivity(new Intent(ViewEmployee.this, MainActivity.class));
+                startActivity(new Intent(ViewEmployee.this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
             }
 
             @Override
@@ -190,7 +190,7 @@ public class ViewEmployee extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
                         deleteEmployee();
-                        startActivity(new Intent(ViewEmployee.this, MainActivity.class));
+                        startActivity(new Intent(ViewEmployee.this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                     }
                 });
 

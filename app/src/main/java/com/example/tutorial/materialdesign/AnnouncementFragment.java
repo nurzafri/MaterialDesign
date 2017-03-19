@@ -81,6 +81,7 @@ public class AnnouncementFragment extends android.support.v4.app.Fragment {
                 super.onPostExecute(s);
                 loading.dismiss();
                 Toast.makeText(getActivity(),s,Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getActivity(), MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
             }
 
             @Override
