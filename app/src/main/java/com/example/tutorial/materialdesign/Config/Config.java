@@ -8,7 +8,7 @@ public class Config {
 
     //Address of our scripts of the CRUD
     public static final String URL_ADD="https://ukmandroidtutorial.000webhostapp.com/fcm/addEmp.php";
-    public static final String URL_GET_ALL = "http://192.168.94.1/Android/CRUD/getAllEmp.php";
+    public static final String URL_GET_ALL = "https://ukmandroidtutorial.000webhostapp.com/fcm/getAllEmp.php";
     public static final String URL_GET_EMP = "http://192.168.94.1/Android/CRUD/getEmp.php?id=";
     public static final String URL_UPDATE_EMP = "http://192.168.94.1/Android/CRUD/updateEmp.php";
     public static final String URL_DELETE_EMP = "http://192.168.94.1/Android/CRUD/deleteEmp.php?id=";

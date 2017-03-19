@@ -22,8 +22,8 @@ import com.example.tutorial.materialdesign.SettingsFragment;
 public class MyAdapter extends FragmentPagerAdapter {
 
     private Context mContext;
-    private String[] titles = {"Announcement", "List", "Settings"};
-    int[] icons = new int[] {R.mipmap.ic_announcement_black_48dp, R.mipmap.ic_list_black_48dp, R.mipmap.ic_settings_black_48dp};
+    private String[] titles = {"List", "Announcement", "Settings"};
+    int[] icons = new int[] {R.mipmap.ic_list_black_48dp, R.mipmap.ic_announcement_black_48dp, R.mipmap.ic_settings_black_48dp};
     private int heightIcon;
 
     public MyAdapter(FragmentManager fm, Context context) {
@@ -39,9 +39,9 @@ public class MyAdapter extends FragmentPagerAdapter {
         Fragment fragment = null;
 
         if(position == 0){
-            fragment = new AnnouncementFragment();
-        } else if(position == 1) {
             fragment = new ItemListFragment();
+        } else if(position == 1) {
+            fragment = new AnnouncementFragment();
         } else if(position == 2){
             fragment = new SettingsFragment();
         }
