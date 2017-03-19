@@ -46,7 +46,7 @@ public class ItemListFragment extends android.support.v4.app.Fragment {
         View v = inflater.inflate(R.layout.item_list_fragment, container, false);
 
         listView = (ListView) v.findViewById(R.id.listView);
-        /*listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), ViewEmployee.class);
@@ -55,7 +55,7 @@ public class ItemListFragment extends android.support.v4.app.Fragment {
                 intent.putExtra(Config.EMP_ID,empId);
                 startActivity(intent);
             }
-        });*/
+        });
         getJSON();
 
         return v;

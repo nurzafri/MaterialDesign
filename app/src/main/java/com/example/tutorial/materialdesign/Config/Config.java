@@ -9,9 +9,9 @@ public class Config {
     //Address of our scripts of the CRUD
     public static final String URL_ADD="https://ukmandroidtutorial.000webhostapp.com/fcm/addEmp.php";
     public static final String URL_GET_ALL = "https://ukmandroidtutorial.000webhostapp.com/fcm/getAllEmp.php";
-    public static final String URL_GET_EMP = "http://192.168.94.1/Android/CRUD/getEmp.php?id=";
-    public static final String URL_UPDATE_EMP = "http://192.168.94.1/Android/CRUD/updateEmp.php";
-    public static final String URL_DELETE_EMP = "http://192.168.94.1/Android/CRUD/deleteEmp.php?id=";
+    public static final String URL_GET_EMP = "https://ukmandroidtutorial.000webhostapp.com/fcm/getEmp.php?id=";
+    public static final String URL_UPDATE_EMP = "https://ukmandroidtutorial.000webhostapp.com/fcm/updateEmp.php";
+    public static final String URL_DELETE_EMP = "https://ukmandroidtutorial.000webhostapp.com/fcm/deleteEmp.php?id=";
 
     //Keys that will be used to send the request to php scripts
     public static final String KEY_EMP_ID = "id";
