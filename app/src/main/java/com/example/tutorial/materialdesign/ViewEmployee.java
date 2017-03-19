@@ -129,6 +129,7 @@ public class ViewEmployee extends AppCompatActivity implements View.OnClickListe
                 super.onPostExecute(s);
                 loading.dismiss();
                 Toast.makeText(ViewEmployee.this,s,Toast.LENGTH_LONG).show();
+                startActivity(new Intent(ViewEmployee.this, MainActivity.class));
             }
 
             @Override
