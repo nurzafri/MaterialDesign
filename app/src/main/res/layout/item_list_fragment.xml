@@ -5,6 +5,11 @@
     android:orientation="vertical"
     tools:context="com.example.tutorial.materialdesign.ItemListFragment">
 
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchView"/>
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

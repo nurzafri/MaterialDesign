@@ -10,8 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.SimpleAdapter;
 
 import com.example.tutorial.materialdesign.Config.Config;
@@ -34,6 +34,8 @@ public class ItemListFragment extends android.support.v4.app.Fragment {
 
     private String JSON_STRING;
 
+    private SearchView searchView;
+
     public ItemListFragment() {
         // Required empty public constructor
     }
@@ -46,6 +48,8 @@ public class ItemListFragment extends android.support.v4.app.Fragment {
         View v = inflater.inflate(R.layout.item_list_fragment, container, false);
 
         listView = (ListView) v.findViewById(R.id.listView);
+        searchView = (SearchView) v.findViewById(R.id.searchView);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -84,12 +88,27 @@ public class ItemListFragment extends android.support.v4.app.Fragment {
             e.printStackTrace();
         }
 
-        ListAdapter adapter = new SimpleAdapter(
+        final SimpleAdapter adapter = new SimpleAdapter(
                 getActivity(), list, R.layout.list_item,
                 new String[]{Config.TAG_ID,Config.TAG_NAME},
                 new int[]{R.id.id, R.id.name});
 
         listView.setAdapter(adapter);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+//                Toast.makeText(getContext(), "ON QUERY TEXT SUBMIT", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+//                Toast.makeText(getContext(), "ON QUERY TEXT CHANGE", Toast.LENGTH_SHORT).show();
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
     }
 
     private void getJSON(){
