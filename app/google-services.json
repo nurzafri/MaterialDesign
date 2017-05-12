@@ -1,0 +1,104 @@
+{
+  "project_info": {
+    "project_number": "291377588758",
+    "firebase_url": "https://pushnotitutorial.firebaseio.com",
+    "project_id": "pushnotitutorial",
+    "storage_bucket": "pushnotitutorial.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:291377588758:android:ba66f19cad22a7ca",
+        "android_client_info": {
+          "package_name": "com.example.tutorial.fcm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "291377588758-e1igdb50sv1lnqe9p41eki8ppjjfgj2a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVa5T-IhJG0dfE3-f2sLZH3s2i8DkK_Ok"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:291377588758:android:99a94653e6145085",
+        "android_client_info": {
+          "package_name": "com.example.tutorial.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "291377588758-e1igdb50sv1lnqe9p41eki8ppjjfgj2a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVa5T-IhJG0dfE3-f2sLZH3s2i8DkK_Ok"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:291377588758:android:eb301c70c3ad1809",
+        "android_client_info": {
+          "package_name": "com.example.tutorial.materialdesign"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "291377588758-e1igdb50sv1lnqe9p41eki8ppjjfgj2a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVa5T-IhJG0dfE3-f2sLZH3s2i8DkK_Ok"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
